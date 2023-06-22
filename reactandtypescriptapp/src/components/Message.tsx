@@ -1,14 +1,22 @@
-import React from 'react'
-import { Todos } from '../types/Type'
-import { MdDelete } from 'react-icons/md';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import React from "react";
+import { Todos } from "../types/Type";
+import { MdDelete } from "react-icons/md";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
 
 type Props = {
-    todos: Todos[],
-    deleteMessage: (id: number) => void
-}
+  todos: Todos[];
+  deleteMessage: (id: number) => void;
+};
 
-const Message:React.FC<Props> = ({todos,deleteMessage}) => {
+const Message: React.FC<Props> = ({ todos, deleteMessage }) => {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -23,7 +31,10 @@ const Message:React.FC<Props> = ({todos,deleteMessage}) => {
             <TableRow key={i}>
               <TableCell>{todo.message}</TableCell>
               <TableCell>
-                <span onClick={() => deleteMessage(todo.id)} style={{ cursor: 'pointer' }}>
+                <span
+                  onClick={() => deleteMessage(todo.id)}
+                  style={{ cursor: "pointer" }}
+                >
                   <MdDelete size={24} color="red" />
                 </span>
               </TableCell>
@@ -32,7 +43,7 @@ const Message:React.FC<Props> = ({todos,deleteMessage}) => {
         </TableBody>
       </Table>
     </TableContainer>
-  )
-}
+  );
+};
 
-export default Message
+export default Message;
