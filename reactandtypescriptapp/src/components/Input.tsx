@@ -11,17 +11,16 @@ type IProps = {
 const Input: React.FC<IProps> = ({ todo, setTodo, addMessage }) => {
   return (
     <div className="homeDiv">
-
       <TextField
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         type="text"
         placeholder="Add To Name"
-        label="Name"
+        label="Message..."
         variant="outlined"
       />
-      <Button onClick={addMessage} variant="contained" color="primary">
-        <GrAddCircle size={24} />
+      <Button onClick={addMessage} variant="contained" color="primary" startIcon={<GrAddCircle size={24} />}>
+        Add
       </Button>
     </div>
   );
